@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import PokemonList from "./PokemonList";
 import Pagination from "./Pagination";
+import Header from "./Header";
 import axios from "axios";
+import "./styles.css";
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
@@ -17,7 +19,7 @@ function App() {
     let cancel;
     axios
       .get(currentPageUrl, {
-        cancelToken: new axios.CancelToken(c => cancel = c)
+        cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
       .then((res) => {
         setIsLoading(false);
@@ -37,10 +39,17 @@ function App() {
     setCurrentPageUrl(previousPageUrl);
   }
 
-  if (isLoading) return "Rounding up the Pokémon...Hold Tight!";
+  if (isLoading) { return (
+    <>
+      <Header />
+      <p>"Loading new Pokémon...Hold Tight!"</p>
+      <PokemonList pokemon={pokemon} />
+    </>
+  ); };
 
   return (
     <>
+      <Header />
       <PokemonList pokemon={pokemon} />
       <Pagination
         goToNextPage={nextPageUrl ? goToNextPage : null}
