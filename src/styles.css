@@ -15,6 +15,8 @@
   border-color: #e4000f;
   font-family: VT323, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   background-color: #f6cf57;
+  min-width: 150px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .Header {
@@ -23,12 +25,40 @@
 }
 
 .paginationButtons {
-  display: inline-block;
-  border-radius: 1px;
-  border-style: solid;
-  border-color: black;
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto;
+}
+.card {
+  border-width: 6px;
+  border-color: #e4000f;
+  border-style: double;
+  background-color: #fbdf8e;
+  margin: 2rem;
+  padding: 2rem;
+  max-width: 175px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  display: block;
+
+  /* Glow when hovered over */
+}
+
+.card-name {
+  text-transform: capitalize;
+  color: black;
+}
+
+.card-image {
+  background-color: rgb(220, 233, 245);
+  border-radius: 3px;
+  border-style: dotted;
+  border-color: #e4000f;
+  object-position: center;
+}
+
+.card,
+.PokemonList {
+  display: inline-block;
+  margin: 0 10px;
 }
 
 /* fix that paginationButtons */

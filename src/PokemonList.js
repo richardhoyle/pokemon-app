@@ -1,10 +1,15 @@
-import React from "react";
-
-export default function PokemonList({ pokemon }) {
+export default function PokemonList({ pokemonList, setCurrentPokemon }) {
   return (
     <div className="PokemonList">
-      {pokemon.map((p) => (
-        <div key={p}>{p}</div>
+      {pokemonList.map((p) => (
+        <div
+          key={p}
+          className="Pokemon"
+          onClick={() => {
+            setCurrentPokemon(p)
+            console.log("You clicked on " + p);
+          }}
+        >{p}</div>
       ))}
     </div>
   );
