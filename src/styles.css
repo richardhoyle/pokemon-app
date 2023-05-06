@@ -6,9 +6,15 @@
   box-sizing: border-box;
 }
 
+body {
+  background: url("./images/grassBackground.jpg");
+  background-position: 50% 50%;
+}
+
 .PokemonList {
+  display: block;
   margin: 10px 200px 10px 200px;
-  font-size: larger;
+  font-size: 1.4em;
   text-transform: capitalize;
   text-align: center;
   border-style: dotted;
@@ -19,15 +25,23 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
+.Pokemon:hover {
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.647);
+  cursor: pointer;
+}
+
 .Header {
   width: 100%;
   height: auto;
+  max-height: 200px;
 }
 
 .paginationButtons {
   text-align: center;
   margin: 10px auto;
 }
+
 .card {
   border-width: 6px;
   border-color: #e4000f;
@@ -35,11 +49,12 @@
   background-color: #fbdf8e;
   margin: 2rem;
   padding: 2rem;
-  max-width: 175px;
+  max-width: 9000px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   display: block;
-
-  /* Glow when hovered over */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 550;
+  min-width: 226px;
 }
 
 .card-name {
@@ -47,18 +62,49 @@
   color: black;
 }
 
-.card-image {
-  background-color: rgb(220, 233, 245);
-  border-radius: 3px;
-  border-style: dotted;
-  border-color: #e4000f;
-  object-position: center;
-}
+/* .card-image {
+ min-height: 5555rem;
+} */
 
 .card,
 .PokemonList {
-  display: inline-block;
-  margin: 0 10px;
+  margin: 10px;
 }
 
-/* fix that paginationButtons */
+.mainBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+  border-radius: 1px;
+  border-style: solid;
+  margin: 1px auto;
+  text-align: center;
+  background-image: url("./images/mainboxbackground");
+  width: 520px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+button {
+  padding: 1px 80px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: VT323, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: x-large;
+
+  :hover {
+    background-color: #333;
+    color: white;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  :active {
+    background-color: #222;
+    color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+  }
+}

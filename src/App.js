@@ -68,11 +68,13 @@ function App() {
   return (
     <>
       <Header />
-      <PokemonList
-        pokemonList={pokemonList}
-        setCurrentPokemon={setCurrentPokemon}
-      />
-      <PokemonCard pokemonData={pokemonData} />
+      <div className="mainBox">
+        <PokemonList
+          pokemonList={pokemonList}
+          setCurrentPokemon={setCurrentPokemon}
+        />
+        <PokemonCard pokemonData={pokemonData} />
+      </div>
       <Pagination
         goToNextPage={nextPageUrl ? goToNextPage : null}
         goToPreviousPage={previousPageUrl ? goToPreviousPage : null}
